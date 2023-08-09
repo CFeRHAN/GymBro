@@ -70,7 +70,8 @@ def save_weight_gym(message, user_id):
         BOT.send_message(message.chat.id, reply_text)
 
         # Call the talk_to_bard function and reply with the bard_output
-        talk_to_bard(user_data[user_id])
+        reply_text2 = talk_to_bard(user_data[user_id])
+        BOT.send_message(message.chat.id, reply_text2)
 
     except ValueError:
         BOT.send_message(message.chat.id, "Please provide a valid weight (a number).")
